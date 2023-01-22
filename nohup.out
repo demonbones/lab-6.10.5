@@ -1,0 +1,44 @@
+
+ * Serving Flask app "password-evolution" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+[2023-01-22 18:43:34,568] ERROR in app: Exception on /signup/v1 [POST]
+Traceback (most recent call last):
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "password-evolution.py", line 24, in signup_v1
+    c.execute("INSERT INTO USER_PLAIN (USERNAME,PASSWORD) ""VALUES ('{0}', '{1}')".format(Request.form['username'],
+TypeError: 'cached_property' object is not subscriptable
+127.0.0.1 - - [22/Jan/2023 18:43:34] "[35m[1mPOST /signup/v1 HTTP/1.1[0m" 500 -
+[2023-01-22 18:45:38,665] ERROR in app: Exception on /signup/v1 [POST]
+Traceback (most recent call last):
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/devasc/.local/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "password-evolution.py", line 24, in signup_v1
+    c.execute("INSERT INTO USER_PLAIN (USERNAME,PASSWORD) ""VALUES ('{0}', '{1}')".format(Request.form['username'],
+TypeError: 'cached_property' object is not subscriptable
+127.0.0.1 - - [22/Jan/2023 18:45:38] "[35m[1mPOST /signup/v1 HTTP/1.1[0m" 500 -
+127.0.0.1 - - [22/Jan/2023 18:50:00] "[37mGET / HTTP/1.1[0m" 200 -
